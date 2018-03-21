@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
   set_appointment
-   
+
   def index
   end
 
@@ -26,5 +26,5 @@ class AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:name, :datetime, :quantity)
+    params.require(:appointment).permit(:name, :date, :quantity)
 end

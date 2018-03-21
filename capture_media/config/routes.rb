@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'pictures/new'
+
+  get 'pictures/show'
+
   root 'static_pages#home'
   resources :appointments
 
