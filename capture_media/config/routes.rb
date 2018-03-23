@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'sessions/destroy'
+
+  get 'sessions/new'
+
+  get 'sessions/create'
+
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   get 'pictures/new'
 

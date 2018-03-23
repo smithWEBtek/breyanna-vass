@@ -1,8 +1,8 @@
 class PicturesController < ApplicationController
   def new
-  end
-
-  def show
+    @picture = Picture.create(pictures_params)
+    @message = @picture.take_picture
+    redirect_to user_path(@picture.user, :message => @message)
   end
 
   private
