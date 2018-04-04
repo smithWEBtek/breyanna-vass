@@ -1,4 +1,7 @@
 class Appointment < ApplicationRecord::Base
     has_many :pictures
-	has_many :users, through: :pictures
+    has_many :users, through: :pictures
+    
+    validates :name, presence: true, uniqueness: true
+    validates :date, presence: true
 end
