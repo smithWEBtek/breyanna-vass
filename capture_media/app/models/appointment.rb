@@ -1,4 +1,4 @@
-class Appointment < ApplicationRecord::Base
+class Appointment < ApplicationRecord
     has_many :pictures
     has_many :users, through: :pictures
     

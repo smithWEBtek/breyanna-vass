@@ -22,6 +22,7 @@ class AppointmentsController < ApplicationController
       redirect_to @appointment
     else
       redirect_to :new
+    end
   end
 
   def update
@@ -45,4 +46,6 @@ class AppointmentsController < ApplicationController
 
   def appointment_params
     params.require(:appointment).permit(:name, :date, :quantity)
+  end
+
 end
