@@ -1,13 +1,8 @@
 <h1>Listing Appointments</h1>
 <% @appointments.each do |appointment| %>
-    <label>Name:</label> <%= appointment.name %>
-    <label>Date:</label> <%= appointment.date %>
-    <label>Quantity:</label> <%= appointment.quantity %>
-    <% if current_user.admin %>
-        <%= link_to "Show #{appointment.name}", appointment_path(appointment) %><br>
-    <% else %>
-        <%= link_to "Go to #{appointment.name}", appointment_path(appointment) %><br>
-    <% end %>    
+    <label>Name:</label> <%= appointment.name %><br>
+    <label>Date:</label> <%= appointment.date %><br>
+    <label>Quantity:</label> <%= appointment.quantity %><br>  
 <% end %>
 
 <% if !!@user %>
