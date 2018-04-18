@@ -1,2 +1,16 @@
 <h1>Appointments</h1>
-<p>Find me in app/views/appointments/show.html.erb</p>
+
+<label> Name:</label> <%= @appointment.name %>
+<label> Date: </label> <%= @appointment.date %>
+
+<% if current_user.admin %>
+    <%= link_to 'Edit Appointment', [:edit, @appointment] %>
+<% else %>
+    <form action="/pictures/new" method="post">
+        <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+        <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
+        <%= tag(:input, :type => "hidden", :name => :appointment_id, :value => @appointment.id) %>
+        <input type="submit" value="Get picture taken">
+  </form>
+<% end %>
+<%= link_to 'Back', appointments_path %>

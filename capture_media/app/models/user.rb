@@ -22,4 +22,10 @@ class User < ApplicationRecord
     user
   end
 
+  private
+  
+  def current_user
+    @user = User.find_by(params[:name])
+  end
+
 end

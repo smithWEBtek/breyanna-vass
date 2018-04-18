@@ -5,5 +5,4 @@ class Appointment < ApplicationRecord
     validates :name, presence: true, uniqueness: true
     validates :date, presence: true
 
-    scope :month, -> { by_post_status("") }
 end
