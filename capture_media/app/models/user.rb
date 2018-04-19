@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
-  has_many :appointments
-  has_many :pictures, through: :appointments  
+  has_many :pictures
+  has_many :appointments, through: :pictures  
   
   #validates :name, presence: true
 
@@ -20,12 +20,7 @@ class User < ApplicationRecord
          )
       end
     user
-  end
-
-  private
+  end  
   
-  def current_user
-    @user = User.find_by(params[:name])
-  end
 
 end

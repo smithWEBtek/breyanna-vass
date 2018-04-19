@@ -16,5 +16,7 @@ class SessionsController < ApplicationController
       redirect_to user_path(@user), notice: "Welcome back to Capture Media!"
     else
       redirect_to signin_path
+    end
   end
+  
 end

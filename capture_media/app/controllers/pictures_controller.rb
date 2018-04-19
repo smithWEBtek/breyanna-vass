@@ -1,7 +1,7 @@
 class PicturesController < ApplicationController
   def new
-    @picture = Picture.create(pictures_params)
-    redirect_to pictures_new_path
+    @picture = Picture.new
+    #redirect_to pictures_new_path
   end
 
   private

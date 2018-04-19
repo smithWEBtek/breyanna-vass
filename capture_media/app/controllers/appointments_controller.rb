@@ -2,7 +2,8 @@ class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
 
   def index
-    @appointments = Appointment.all
+    @user = User.find_by_id(params[:user_id])
+    @appointments = @user.appointments
   end
 
   def show
@@ -37,6 +38,8 @@ class AppointmentsController < ApplicationController
     @appointment.destroy
     redirect_to appointments_url
   end
+
+  
 
   private
 
