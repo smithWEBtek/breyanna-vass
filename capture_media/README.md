@@ -1,24 +1,14 @@
-# README
+#Capture Media
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app will allow you to keep record of appointments to get your picture taken. You can can schedule a day to have your appointment and choose how many pictures you want.
 
-Things you may want to cover:
+#Installation
 
-* Ruby version
+git clone git@github.com:newedition994/rails-assessment-v-000/capture_media.git
+cd capture_media
+bundle install
+rails db:migrate
+rails s
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#License
+The gem is available as open source under the terms of the MIT License.
