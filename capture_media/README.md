@@ -4,7 +4,7 @@ This app will allow you to keep record of appointments to get your picture taken
 
 #Installation
 
-git clone git@github.com:newedition994/rails-assessment-v-000/capture_media.git
+git clone 
 cd capture_media
 bundle install
 rails db:migrate
