@@ -22,7 +22,7 @@ class AppointmentsController < ApplicationController
     if @appointment.save
       redirect_to @appointment
     else
-      redirect_to :new
+      redirect_to new_appointment_path
     end
   end
 
