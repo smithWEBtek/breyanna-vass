@@ -6,13 +6,9 @@ Installation
 
 ```
 git clone git@github.com:newedition994/rails-assessment-v-000.git
-
 cd capture_media
-
 bundle install
-
 rails db:migrate
-
 rails s
 ```
 
@@ -22,4 +18,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/newedi
 
 License
 
-The gem is available as open source under the terms of the MIT License.
+The gem is available as open source under the terms of the [MIT License](https://github.com/newedition994/rails-assessment-v-000/blob/master/capture_media/LICENSE).
