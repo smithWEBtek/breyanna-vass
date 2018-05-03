@@ -10,6 +10,10 @@ class AppointmentsController < ApplicationController
     @picture = Picture.new
   end
 
+  def recent
+    @appointments = Appointment.recent
+  end
+
   def new
     @appointment = Appointment.new
   end

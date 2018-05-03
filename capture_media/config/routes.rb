@@ -24,7 +24,11 @@ Rails.application.routes.draw do
   #get 'pictures/show'
 
   root 'static_pages#home'
-  resources :appointments
+  resources :appointments do
+    collection do
+      get :recent
+    end
+  end
   resources :users do
     resources :appointments
   end
