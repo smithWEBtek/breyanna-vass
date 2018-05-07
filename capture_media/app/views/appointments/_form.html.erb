@@ -1,5 +1,4 @@
-<%= render 'layouts/form_messages', object: @appointment %>
-<%= form_for @appointment do |f| %>
+<%= form_for [user, appointment] do |f| %>
     <div class="form-group">
     <%= f.label :name, 'Name' %>
     <%= f.text_field :name %>

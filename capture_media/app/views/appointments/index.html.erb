@@ -1,11 +1,11 @@
 <h1>Listing Appointments</h1>
 <% @appointments.each do |appointment| %>
-    <label>Name:</label> <%= @appointment.name %><br>
-    <label>Date:</label> <%= @appointment.date %><br>
-    <label>Quantity:</label> <%= @appointment.quantity %><br>  
+    <label>Name:</label> <%= appointment.name %><br>
+    <label>Date:</label> <%= appointment.date %><br>
+    <label>Quantity:</label> <%= appointment.quantity %><br>  
 <% end %>
 
 <% if !!@user %>
-    <%= button_to 'New Appointment', new_appointment_path, method: 'get' %>
-    <%= button_to "Back to profile", user_path(@user) %>
+    <%= button_to 'New Appointment', new_user_appointment_path(@user), method: 'get' %>
+    <%= button_to "Back to profile", user_appointments_path %>
 <% end %>        

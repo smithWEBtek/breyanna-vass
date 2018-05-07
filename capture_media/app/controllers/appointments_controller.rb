@@ -2,7 +2,8 @@ class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
 
   def index
-    @user = User.find_by_id(params[:user_id])
+    @user = User.find_by_id(current_user.id)
+    #binding.pry
     @appointments = @user.appointments
   end
 
@@ -16,16 +17,19 @@ class AppointmentsController < ApplicationController
 
   def new
     @appointment = Appointment.new
+    @user = User.find_by_id(current_user.id)
   end
 
   def edit
   end
 
   def create
-    @appointment = Appointment.new(appointment_params)
     #binding.pry
+    @appointment = Appointment.new(appointment_params)
     if @appointment.save
-      redirect_to appointment_path
+      @user = User.find_by_id(current_user.id)
+      @user.appointments << @appointment
+      redirect_to user_appointment_path(@user, @appointment)
     else
       redirect_to new_appointment_path
     end
