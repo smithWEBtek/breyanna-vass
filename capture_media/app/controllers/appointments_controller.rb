@@ -23,9 +23,9 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appointment_params)
-    binding.pry
+    #binding.pry
     if @appointment.save
-      redirect_to @appointment
+      redirect_to appointment_path
     else
       redirect_to new_appointment_path
     end
