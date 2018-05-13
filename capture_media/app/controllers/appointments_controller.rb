@@ -29,9 +29,9 @@ class AppointmentsController < ApplicationController
     if @appointment.save
       @user = User.find_by_id(current_user.id)
       @user.appointments << @appointment
-      redirect_to user_appointment_path(@user, @appointment)
+      redirect_to user_appointments_path(@user, @appointment)
     else
-      redirect_to new_appointment_path
+      redirect_to new_user_appointment_path
     end
   end
 
