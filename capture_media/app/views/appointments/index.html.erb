@@ -7,5 +7,4 @@
 
 <% if !!@user %>
     <%= button_to 'New Appointment', new_user_appointment_path(@user), method: 'get' %>
-    <%= button_to "Back to profile", user_appointments_path %>
 <% end %>        

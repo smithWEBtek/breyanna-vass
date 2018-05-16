@@ -24,12 +24,13 @@ class AppointmentsController < ApplicationController
   end
 
   def create
+    #@appointment = Appointment.new(appointment_params)
     #binding.pry
-    @appointment = Appointment.new(appointment_params)
+    @appointment = current_user.appointments.build(appointment_params)
+    #binding.pry
     if @appointment.save
-      @user = User.find_by_id(current_user.id)
-      @user.appointments << @appointment
-      redirect_to user_appointments_path(@user, @appointment)
+      ##@user.appointments << @appointment
+      redirect_to user_appointments_path(current_user, @appointment)
     else
       redirect_to new_user_appointment_path
     end
