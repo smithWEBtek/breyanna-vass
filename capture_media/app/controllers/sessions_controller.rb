@@ -20,3 +20,5 @@ class SessionsController < ApplicationController
   end
   
 end
+
+#user submittable attribute on the join table & fixing the login --> caption on appointment pictures and making appointment the join table
