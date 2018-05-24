@@ -1,4 +1,5 @@
 class Picture < ApplicationRecord
-    has_many :appointment_pictures
-    has_many :appointments, through: :appointment_pictures
+    has_many :appointments
+    has_many :users, through: :appointments
 end
+#change to package

@@ -3,12 +3,11 @@ class AppointmentsController < ApplicationController
 
   def index
     @user = User.find_by_id(current_user.id)
-    #binding.pry
     @appointments = @user.appointments
   end
 
   def show
-    @picture = Picture.new
+    @picture = Picture.new #package
   end
 
   def recent
@@ -24,12 +23,9 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    #@appointment = Appointment.new(appointment_params)
-    #binding.pry
     @appointment = current_user.appointments.build(appointment_params)
-    #binding.pry
+    binding.pry
     if @appointment.save
-      ##@user.appointments << @appointment
       redirect_to user_appointments_path(current_user, @appointment)
     else
       redirect_to new_user_appointment_path

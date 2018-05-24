@@ -10,3 +10,5 @@ class PicturesController < ApplicationController
     params.permit(:user_id, :appointment_id)
   end
 end
+
+#change to packages
