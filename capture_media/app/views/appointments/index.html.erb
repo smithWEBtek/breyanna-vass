@@ -2,7 +2,9 @@
 <% @appointments.each do |appointment| %>
     <label>Name:</label> <%= appointment.name %><br>
     <label>Date:</label> <%= appointment.date %><br>
-    <label>Quantity:</label> <%= appointment.quantity %><br>  
+    <label>Quantity:</label> <%= appointment.quantity %><br>
+    <label>Package:</label> <%= appointment.package_id %><br> 
+     
 <% end %>
 
 <% if !!@user %>
