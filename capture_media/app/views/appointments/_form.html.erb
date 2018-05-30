@@ -12,5 +12,9 @@
     <%= f.number_field :quantity, in: 1..5 %>
     </div>
     #preset packages 
+    <div class="form-group">
+        #<%= f.label :package_id %> <br>
+        #<%= f.select(:package_id, Appointment::PACKAGE_OPTION) %>
+    </div>
     <%= f.submit %>
 <% end %>    

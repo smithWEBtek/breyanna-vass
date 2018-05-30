@@ -6,4 +6,6 @@ class Appointment < ApplicationRecord
     validates :date, presence: true
 
     scope :recent, ->{ order("created_at DESC") }
+
+    #PACKAGE_OPTIONS = ["Package 1","Package 2", "Package 3"]
 end
