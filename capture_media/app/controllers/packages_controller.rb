@@ -6,7 +6,7 @@ class PackagesController < ApplicationController
   private
 
   def packages_params
-    params.permit(:caption)
+    params.permit(:name, :description)
   end
 end
 
