@@ -7,7 +7,7 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-    @picture = Picture.new #package
+    @package = Package.new 
   end
 
   def recent

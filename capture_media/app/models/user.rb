@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:google_oauth2]
 
   has_many :appointments 
-  has_many :pictures, through: :appointments
+  has_many :packages, through: :appointments
   
   #validates :name, presence: true
 
