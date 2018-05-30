@@ -10,4 +10,3 @@ class PackagesController < ApplicationController
   end
 end
 
-#change to packages
