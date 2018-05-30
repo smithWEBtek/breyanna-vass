@@ -10,11 +10,10 @@
     <div class="form-group">
     <%= f.label :quantity, 'Quantity' %>
     <%= f.number_field :quantity, in: 1..5 %>
-    </div>
-    #preset packages 
+    </div> 
     <div class="form-group">
-        #<%= f.label :package_id %> <br>
-        #<%= f.select(:package_id, Appointment::PACKAGE_OPTION) %>
+    <%= f.label :package_id, 'Package' %>
+    <%= f.collection_select :package_id, Package.all, :id, :name %>
     </div>
     <%= f.submit %>
 <% end %>    
