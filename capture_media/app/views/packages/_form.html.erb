@@ -1,8 +1,9 @@
-<%= form_for @package do |f| %>  
+<%= form_for(@package, url: packages_new_path) do |f| %>  
     <div class="form-group">
         <%= f.label :name %> 
         <%= f.text_field :name %>
-    </div>  
+    </div> 
+    <br> 
     <div class="form-group">
         <%= f.label :description %> 
         <%= f.text_area :description %>
