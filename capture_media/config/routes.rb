@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   #get 'sessions/create'
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'users/registrations' }
-  get 'packages/new'
+  resources :packages
   
   #get 'pictures/show'
 

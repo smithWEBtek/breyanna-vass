@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :appointments 
   has_many :packages, through: :appointments
   
-  #validates :name, presence: true
+  validates :first_name, presence: true
 
   def self.from_omniauth(access_token)
     data = access_token.info
