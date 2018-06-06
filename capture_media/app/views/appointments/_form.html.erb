@@ -14,6 +14,7 @@
     <div class="form-group">
     <%= f.label :package_id, 'Package' %>
     <%= f.collection_select :package_id, Package.all, :id, :name %>
+    For more information on the packages please see the packages page.
     </div>
     <%= f.submit %>
 <% end %>    
