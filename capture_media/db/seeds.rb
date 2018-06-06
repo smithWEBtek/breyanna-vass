@@ -8,6 +8,6 @@
 
 Package.destroy_all
 
-package_1 = Package.create!(name: "Package 1")
-package_2 = Package.create!(name: "Package 2")
-package_3 = Package.create!(name: "Package 3")
+package_1 = Package.create!(name: "Package 1", description: "One landscape photo and one portrait photo.")
+package_2 = Package.create!(name: "Package 2", description: "Two Landscape photos and one portrait photo.")
+package_3 = Package.create!(name: "Package 3", description: "As many landscape and portrait photos as requested.")
