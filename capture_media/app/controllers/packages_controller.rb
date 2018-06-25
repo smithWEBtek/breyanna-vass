@@ -4,7 +4,6 @@ class PackagesController < ApplicationController
   end  
 
   def show
-    @package = Package.new 
   end
   
   def new
@@ -16,7 +15,7 @@ class PackagesController < ApplicationController
   end
 
   def popular
-    @package = Package.popular
+    @packages = Package.popular
   end
 
   private
