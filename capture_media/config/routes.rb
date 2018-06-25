@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'users/registrations' }
   resources :packages
+      get 'packages/popular_package'
   
   #get 'pictures/show'
 
