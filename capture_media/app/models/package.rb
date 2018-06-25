@@ -4,5 +4,5 @@ class Package < ApplicationRecord
 
     #has a description for the packages not captions on the table
 
-    scope :popular, -> { Appointment.includes(:package_id).where("name").uniq }
+    #scope :popular, -> { Appointment.includes(:package_id).where("package_id").uniq }
 end
