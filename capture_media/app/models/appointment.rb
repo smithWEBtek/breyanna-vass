@@ -6,5 +6,4 @@ class Appointment < ApplicationRecord
     validates :date, presence: true
 
     scope :recent, ->{ order("created_at DESC") }
-
 end

@@ -4,5 +4,6 @@ class Package < ApplicationRecord
 
     #has a description for the packages not captions on the table
 
-    #scope :popular, -> { Appointment.includes(:package_id).where("package_id").uniq }
+    scope :popular, -> { Package.left_joins(:appointments).group(:id).order('COUNT(appointments.id) DESC').limit(1) }
+        
 end
