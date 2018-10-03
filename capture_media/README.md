@@ -1,6 +1,6 @@
 **Capture Media**
 
-This app will allow you to keep record of appointments to get your picture taken. You can can schedule a day to have your appointment and choose how many pictures you want.
+This app will allow you to keep record of appointments to get your picture taken. You can schedule a day to have your appointment and choose how many pictures you want.
 
 **Installation**
 
