@@ -7,12 +7,18 @@
 # })
 
 # create an alert for when the new appointment button is clicked
-# var myBtn = document.getElementById("myBtn");
+#Js Code:
+#  const myBtn = document.getElementById("myBtn");
 
-# myBtn.addEventListener("click", function(){
+#  myBtn.addEventListener("click", function(event){
 #     alert ("We are going to create a new appointment!")
-# })
+#  })
 
-document.getElementById("myBtn").addEventListener("click", function(){
-    alert("We are going to create a new appointment!")
-})
+#CoffeeScript Code:
+ myBtn.addEventListener 'click', (event) ->
+  alert 'We are going to create a new appointment!'
+  return
+
+# document.getElementById("myBtn").addEventListener("click", function(){
+#     alert("We are going to create a new appointment!")
+# })

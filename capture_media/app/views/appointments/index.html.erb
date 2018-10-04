@@ -1,8 +1,5 @@
 <h1>Listing Appointments</h1>
 
-# want to be able to render a list of appointments using JS
-    #we want to use the _form.html.erb to show all of the information for the appointments
-
 <% @appointments.each do |appointment| %>
     <label>Name:</label> <%= appointment.name %><br>
     <label>Date:</label> <%= appointment.date %><br>
@@ -11,5 +8,5 @@
      
 <% end %>
 <% if !!@user %>
-    <%= button_to id="myBtn" 'New Appointment', new_user_appointment_path(@user), method: 'get' %>
+    <%= button_to 'New Appointment', new_user_appointment_path(@user), method: 'get' %>
 <% end %>        
