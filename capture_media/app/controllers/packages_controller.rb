@@ -1,6 +1,7 @@
 class PackagesController < ApplicationController
   def index
     @packages = Package.all
+    #render 'packages/popular', :layout => false
   end  
 
   def show
@@ -16,6 +17,7 @@ class PackagesController < ApplicationController
 
   def popular
     @packages = Package.popular
+    render 'packages/popular', :layout => false
   end
 
   private

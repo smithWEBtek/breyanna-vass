@@ -1,7 +1,9 @@
 <h1> Most Popular Package </h1>
 
+<div class="popular">
 <% @packages.each do |p| %>
     <h3><%= p.name %> </h3><br>
     <label>Description:</label> <%= p.description %><br>
 <% end  %>  
+</div>
 
