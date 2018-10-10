@@ -4,7 +4,7 @@ $(function(){
             method: "GET",
             url: this.href,
         }).done(function(response){
-          alert()
+            $("body").append(response)
         })
         e.preventDefault();
     })
