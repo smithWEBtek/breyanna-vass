@@ -4,6 +4,8 @@ function Appointment(name, date, quantity) {
     this.quantity = quantity;
 }
 
+Appointment.prototype;
+
 Appointment.prototype.youScheduled = function() {
     console.log(`Hello, ${this.name}, your appointment is ${this.date}.`);
 };
