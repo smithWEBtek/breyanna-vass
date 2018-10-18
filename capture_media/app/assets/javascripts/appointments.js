@@ -11,7 +11,7 @@ Appointment.prototype.youScheduled = function() {
 };
 
 // $(function(){
-//     $(form_for).on("submit", function(e){
+//     $("form#new_appointment").on("submit", function(e){
 //         var $form = $(this);
 //         var action = $form.attr("action");
 //         var params = $form.serialize()
