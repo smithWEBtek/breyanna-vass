@@ -34,10 +34,10 @@ class AppointmentsController < ApplicationController
     @appointment = current_user.appointments.build(appointment_params)
     #binding.pry
     if @appointment.save
-      # respond_to do |f|
-      #   f.html { redirect_to user_appointments_path(current_user, @appointment)}
-      #   f.json { render :json => @appointment}
-      # end
+      respond_to do |f|
+        f.html { redirect_to user_appointments_path(current_user, @appointment)}
+        f.json { render :json => @appointment}
+      end
     else
       redirect_to new_user_appointment_path
     end
