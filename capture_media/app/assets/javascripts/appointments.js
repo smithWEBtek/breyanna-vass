@@ -1,14 +1,14 @@
-// function Appointment(name, date, quantity) {
-//     this.name = name;
-//     this.date = date;
-//     this.quantity = quantity;
-// }
+function Appointment(attributes) {
+    this.name = attributes.name;
+    this.date = attributes.date;
+    this.quantity = attributes.quantity;
+}
 
 // Appointment.prototype;
 
-// Appointment.prototype.youScheduled = function() {
+Appointment.prototype.youScheduled = function() {
 //     console.log(`Hello, ${this.name}, your appointment is ${this.date}.`);
-// };
+};
 
 $(function(){
      $("form#new_appointment").on("submit", function(e){
@@ -22,9 +22,9 @@ $(function(){
              dataType: "json",
              method: "POST"
          }).success(function(json){
-             console.log(json)
-//             var appointment = new Appointment(json);
-//             var appointmentLi = appointment.youScheduled()
+             // console.log(json)
+            var appointment = new Appointment(json);
+            var appointmentLi = appointment.youScheduled()
 //             $("").append(appointmentLi)
          })
          .error(function(response){
