@@ -32,6 +32,8 @@ gem 'active_model_serializers'
 
 gem 'jquery-rails'
 
+#gem 'handlebars_assets'
+
 # gem 'rails-ujs', '~> 0.1.0'
 
 # Use CoffeeScript for .coffee assets and views
