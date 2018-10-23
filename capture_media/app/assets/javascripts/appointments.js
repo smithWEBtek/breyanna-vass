@@ -22,10 +22,10 @@ $(function(){
              dataType: "json",
              method: "POST"
          }).success(function(json){
-            console.log(json)
-            // var appointment = new Appointment(json);
-            // var appointmentLi = appointment.youScheduled()
-            // $("div.appointments").append(appointmentLi)
+            //console.log(json)
+            var appointment = new Appointment(json);
+            var appointmentLi = appointment.youScheduled()
+            $("div.appointments").append(appointmentLi)
          })
          .error(function(response){
              console.log("You broke it?", response)
