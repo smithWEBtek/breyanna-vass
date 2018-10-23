@@ -8,6 +8,8 @@ Appointment.prototype;
 
 Appointment.prototype.youScheduled = function() {
     console.log(`Hello, ${this.name}, your appointment is ${this.date}.`);
+    // return `Hello ${this.name}, your appointment is ${this.date}`;
+    // alert {`Hello ${this.name}, your appointment is ${this.date}`};
 };
 
 $(function(){
