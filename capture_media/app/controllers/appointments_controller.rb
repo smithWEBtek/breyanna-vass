@@ -12,10 +12,6 @@ class AppointmentsController < ApplicationController
 
   def show
     @package = Package.new
-    # respond_to do |format|
-    #   format.html {:index}
-    #   format.json { render json: @package, status: 200}
-    # end 
   end
 
   def recent
