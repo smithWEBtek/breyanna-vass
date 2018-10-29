@@ -17,7 +17,10 @@ class PackagesController < ApplicationController
 
   def popular
     @packages = Package.popular
-    render 'packages/popular', :layout => false
+    respond_to respond_to do |f|
+      f.html { redirect_to popular_packages_path}
+      f.json { render 'packages/popular', :layout => false}
+    end
   end
 
   private
