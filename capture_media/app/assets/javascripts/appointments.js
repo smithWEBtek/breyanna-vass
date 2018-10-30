@@ -42,7 +42,7 @@ $.get(this.href).success(function(json){
     $pictures.html
 
     Object.keys(json).forEach(function(appointment) {
-        debugger
+        // debugger
         // console.log(element);
     });
 });
