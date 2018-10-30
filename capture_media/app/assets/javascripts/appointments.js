@@ -37,15 +37,15 @@ $(function(){
      })
 })
 
-// $.get(this.href).success(function(json){
-//     var $pictures = $("div#appointments")
-//     $pictures.html
+$.get(this.href).success(function(json){
+    var $pictures = $("div#appointments")
+    $pictures.html
 
-//     json.forEach(function(appointment) {
-//         debugger
-//         // console.log(element);
-//     });
-// });
+    Object.keys(json).forEach(function(appointment) {
+        debugger
+        // console.log(element);
+    });
+});
 
 
 $(function(){
