@@ -19,7 +19,8 @@ class PackagesController < ApplicationController
     @packages = Package.popular
     respond_to do |f|
       f.html { render 'packages/popular', :layout => false}
-      f.json { render json: @packages}
+      f.json { render json: 
+        @packages.to_json(only: [:name, :description])}
     end
   end
 

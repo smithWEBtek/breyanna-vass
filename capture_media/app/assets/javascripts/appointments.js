@@ -43,9 +43,11 @@ $.get(this.href).success(function(json){
 
     Object.keys(json).forEach(function(appointment) {
         // debugger
-        // console.log(element);
+        // console.log(key + '=' + obj[key]);
     });
 });
+
+
 
 
 $(function(){
