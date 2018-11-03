@@ -53,6 +53,7 @@ $(function(){
             method: 'GET',
             url: '/users/1/appointments',
             contentType: 'application/json'
+            // how to GET appointments using JSON
         }).done(function(response){
             console.log("body")
             // $("div#appointments").append(response)
@@ -69,6 +70,7 @@ $(function(){
             method: "GET",
             url: this.href,
             contentType: 'application/json'
+            // how to make the show accept JSON in the request headers
         }).done(function(response){
             $("body").append(response)
         })
