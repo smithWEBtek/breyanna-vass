@@ -68,6 +68,7 @@ $(function(){
         $.ajax({
             method: "GET",
             url: this.href,
+            contentType: 'application/json'
         }).done(function(response){
             $("body").append(response)
         })
