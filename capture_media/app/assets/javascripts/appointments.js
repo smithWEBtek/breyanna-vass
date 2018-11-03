@@ -37,16 +37,29 @@ $(function(){
      })
 })
 
-$.get(this.href).success(function(json){
-    var $pictures = $("div#appointments")
-    $pictures.html
+// $.get(this.href).success(function(json){
+//     var $pictures = $("div#appointments")
+//     $pictures.html
 
-    Object.keys(json).forEach(function(appointment) {
-        // debugger
-        // console.log(key + '=' + obj[key]);
-    });
-});
+//     Object.keys(json).forEach(function(appointment) {
+//         // debugger
+//         // console.log(key + '=' + obj[key]);
+//     });
+// });
 
+$(function(){
+    $("a#appointments").on("click", function(e){
+        $.ajax({
+            method: 'GET',
+            url: '/users/1/appointments',
+            contentType: 'application/json'
+        }).done(function(response){
+            console.log("body")
+            // $("div#appointments").append(response)
+        })
+        e.preventDefault();
+    })
+})
 
 
 
