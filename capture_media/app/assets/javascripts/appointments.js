@@ -51,12 +51,12 @@ $(function(){
     $("a#appointments").on("click", function(e){
         $.ajax({
             method: 'GET',
-            url: '/users/1/appointments',
-            contentType: 'application/json'
+            url: '/users/1/appointments.json',
+            dataType: 'json'
             // how to GET appointments using JSON
         }).done(function(response){
-            console.log("div#appointments", response)
-            // $("div#appointments").append(response)
+            // console.log("div#appointments", response)
+            $("div#appointments").append(response)
         })
         // e.preventDefault();
     })
@@ -68,12 +68,13 @@ $(function(){
     $("a.load_package").on("click", function(e) { 
         $.ajax({
             method: "GET",
-            url: this.href,
-            contentType: 'application/json'
+            url: '/packages/popular.json',
+            dataType: 'json'
             // how to make the show accept JSON in the request headers
         }).done(function(response){
+            //console.log("body", response)
             $("body").append(response)
         })
-        // e.preventDefault();
+        e.preventDefault();
     })
 })

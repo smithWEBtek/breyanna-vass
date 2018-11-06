@@ -4,10 +4,10 @@ class AppointmentsController < ApplicationController
   def index
     @user = User.find_by_id(current_user.id)
     @appointments = @user.appointments
-    # respond_to do |format|
-    #   format.html {:index}
-    #   format.json { render json: @appointments, status: 200}
-    # end
+    respond_to do |format|
+      format.html {:index}
+      format.json { render json: @appointments, status: 200}
+    end
   end
 
   def show
