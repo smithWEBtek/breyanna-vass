@@ -33,7 +33,7 @@ $(function(){
          .error(function(response){
              console.log("You broke it?", response)
          })
-         e.preventDefault();
+        // e.preventDefault();
      })
 })
 
@@ -55,10 +55,10 @@ $(function(){
             contentType: 'application/json'
             // how to GET appointments using JSON
         }).done(function(response){
-            console.log("body")
+            console.log("div#appointments", response)
             // $("div#appointments").append(response)
         })
-        e.preventDefault();
+        // e.preventDefault();
     })
 })
 
@@ -74,6 +74,6 @@ $(function(){
         }).done(function(response){
             $("body").append(response)
         })
-        e.preventDefault();
+        // e.preventDefault();
     })
 })
