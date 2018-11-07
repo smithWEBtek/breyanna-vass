@@ -25,7 +25,7 @@ $(function(){
              method: "POST"
          }).success(function(json){
             //console.log(json)
-            $("div.appointments").val("")
+            $("div.appointments").val(" ")
             var appointment = new Appointment(json);
             // var appointmentLi = appointment.youScheduled()
             document.getElementById("scheduled").innerHTML = "Hello " + appointment.name + ", " + "your appointment is " + appointment.date + ".";
