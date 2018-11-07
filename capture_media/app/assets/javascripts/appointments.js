@@ -72,9 +72,8 @@ $(function(){
             url: '/packages/popular.json',
             dataType: 'json'
             // how to make the show accept JSON in the request headers
-        }).done(function(response){
-            //console.log("body", response)
-            $("body").append(response)
+        }).success(function(json){
+            var admirable = Popular
         })
         e.preventDefault();
     })
