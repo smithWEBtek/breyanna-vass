@@ -27,13 +27,14 @@ $(function(){
             //console.log(json)
             $("div.appointments").val("")
             var appointment = new Appointment(json);
-            var appointmentLi = appointment.youScheduled()
-            $("div.appointments").append(appointmentLi)
+            // var appointmentLi = appointment.youScheduled()
+            document.getElementById("scheduled").innerHTML = "Hello " + appointment.name + ", " + "your appointment is " + appointment.date + ".";
+            // $("div.appointments").append(appointmentLi)
          })
          .error(function(response){
              console.log("You broke it?", response)
          })
-        // e.preventDefault();
+        e.preventDefault();
      })
 })
 
