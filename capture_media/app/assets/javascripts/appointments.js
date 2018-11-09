@@ -79,7 +79,7 @@ $(function(){
             // how to make the show accept JSON in the request headers
         }).done(function(response){
             console.log("a.load_package", response)
-            $("p#admired").html(response);
+            $("div.popular").append(response);
         })
         e.preventDefault();
     })
