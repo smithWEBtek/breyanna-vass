@@ -4,6 +4,11 @@ function Appointment(attributes) {
     this.quantity = attributes.quantity;
 }
 
+function Packages(attributes) {
+    this.name = attributes.name;
+    this.description = attributes.description;
+}
+
 Appointment.prototype;
 
 Appointment.prototype.youScheduled = function() {
@@ -73,7 +78,10 @@ $(function(){
             dataType: 'json'
             // how to make the show accept JSON in the request headers
         }).success(function(json){
-            var admirable = Popular
+            console.log(json)
+            var admired = Packages(json);
+            debugger
+            document.getElementById("admired").innerHTML = admired.name + " " + admired.description 
         })
         e.preventDefault();
     })
