@@ -2,6 +2,7 @@ function Appointment(attributes) {
     this.name = attributes.name;
     this.date = attributes.date;
     this.quantity = attributes.quantity;
+    this.package_id = attributes.package_id;
 }
 
 function Packages(attributes) {
@@ -109,6 +110,7 @@ $(function(){
             console.log("a.load_package", response)
             // how to append the JSON to the page
             // Be sure to format the appointments using Alice's example for JSON formatting: https://codepen.io/Balbasuar/pen/LXNyrV?editors=1010
+            // return this.name + " " + this.description
             $("div.popular").append(response);
         })
         e.preventDefault();
