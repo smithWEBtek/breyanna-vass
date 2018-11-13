@@ -32,8 +32,8 @@ $(function(){
             //console.log(json)
             $("div.appointments").val(" ")
             var appointment = new Appointment(json);
-            // var appointmentLi = appointment.youScheduled()
-            document.getElementById("scheduled").innerHTML = "Hello " + appointment.name + ", " + "your appointment is " + appointment.date + ".";
+            var appointmentLi = appointment.youScheduled()
+            document.getElementById("scheduled").innerHTML = appointmentLi //"Hello " + appointment.name + ", " + "your appointment is " + appointment.date + ".";
             // $("div.appointments").append(appointmentLi)
          })
          .error(function(response){
@@ -61,10 +61,12 @@ $(function(){
             dataType: 'json'
             // how to GET appointments using JSON
         }).done(function(response){
+            debugger
             // console.log("div#appointments", response)
+            // Be sure to format the appointments using Alice's example for JSON formatting: https://codepen.io/Balbasuar/pen/LXNyrV?editors=1010
             $("div#appointments").append(response)
         })
-        // e.preventDefault();
+        e.preventDefault();
     })
 })
 
@@ -79,6 +81,7 @@ $(function(){
         }).done(function(response){
             console.log("a.load_package", response)
             // how to append the JSON to the page
+            // Be sure to format the appointments using Alice's example for JSON formatting: https://codepen.io/Balbasuar/pen/LXNyrV?editors=1010
             $("div.popular").append(response);
         })
         e.preventDefault();
