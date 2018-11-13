@@ -66,7 +66,34 @@ $(function(){
             // Be sure to format the appointments using Alice's example for JSON formatting: https://codepen.io/Balbasuar/pen/LXNyrV?editors=1010
             $("div#appointments").append(response)
         })
-        e.preventDefault();
+        // THE FOLLOWING CODE IS MEANT TO DISPLAY JSON WITHOUT USING JQUERY, BUT USING FETCH INSTEAD
+        // Var url = '/users/1/appointments.json'
+        // fetch(url, {
+        //     Method: 'GET',
+        //     dataType: 'json'
+        // })
+        // .then(response => response.json())
+        // .then(data => {
+        //     const appointment = new Appointment(data.message)
+        //     const appointmentHTML = appointment.formatDateHtml ()
+        //     Document.getElementById('div#appointment').innerHTML = appointmentHTML
+        // })
+        // }
+
+        // Class Appointment {
+        //     Constructor(message){
+        //         This.name = message
+        //     }
+        // }
+
+        // Appointment.prototype.formatDateHtml = function(){
+        //     Return `Name: ${this.name}
+        //     Date: ${this.date}
+        //     Quantity:${this.quantity}
+        //     Package: ${this.package_id}`
+        // }
+
+        // e.preventDefault();
     })
 })
 
