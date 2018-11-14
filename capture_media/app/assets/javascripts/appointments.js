@@ -56,43 +56,47 @@ $(function(){
 
 $(function(){
     $("a#appointments").on("click", function(e){
-        $.ajax({
-            method: 'GET',
-            url: '/users/1/appointments.json',
-            dataType: 'json'
-            // how to GET appointments using JSON
-        }).done(function(response){
-            debugger
-            // console.log("div#appointments", response)
-            // Be sure to format the appointments using Alice's example for JSON formatting: https://codepen.io/Balbasuar/pen/LXNyrV?editors=1010
-            $("div#appointments").append(response)
-        })
-        // THE FOLLOWING CODE IS MEANT TO DISPLAY JSON WITHOUT USING JQUERY, BUT USING FETCH INSTEAD
-        // Var url = '/users/1/appointments.json'
-        // fetch(url, {
-        //     Method: 'GET',
+        // $.ajax({
+        //     method: 'GET',
+        //     url: '/users/1/appointments.json',
         //     dataType: 'json'
+        //     // how to GET appointments using JSON
+        // }).done(function(response){
+        //     debugger
+        //     // console.log("div#appointments", response)
+        //     // Be sure to format the appointments using Alice's example for JSON formatting: https://codepen.io/Balbasuar/pen/LXNyrV?editors=1010
+        //     $("div#appointments").append(response)
         // })
-        // .then(response => response.json())
-        // .then(data => {
-        //     const appointment = new Appointment(data.message)
-        //     const appointmentHTML = appointment.formatDateHtml ()
-        //     Document.getElementById('div#appointment').innerHTML = appointmentHTML
-        // })
+// THE FOLLOWING CODE IS MEANT TO DISPLAY JSON WITHOUT USING JQUERY, BUT USING FETCH INSTEAD
+        e.preventDefault()
+        var url = '/users/1/appointments.json'
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            //debugger
+            // const appointment = new Appointment(data.message)
+            // const appointmentHTML = appointment.formatDateHtml()
+            // debugger
+            // data.forEach(user => {
+            //     var textnode = document.createTextNode(user.name);         // Create a text node  
+            //     //debugger 
+            //     document.getElementById('root_appointments').appendChild(textnode)
+            })
+        })
         // }
 
-        // Class Appointment {
-        //     Constructor(message){
-        //         This.name = message
-        //     }
-        // }
+        // // // Class Appointment {
+        // // //     Constructor(message){
+        // // //         This.name = message
+        // // //     }
+        // // // }
 
-        // Appointment.prototype.formatDateHtml = function(){
-        //     Return `Name: ${this.name}
-        //     Date: ${this.date}
-        //     Quantity:${this.quantity}
-        //     Package: ${this.package_id}`
-        // }
+        // // // Appointment.prototype.formatDateHtml = function(){
+        // // //     Return `Name: ${this.name}
+        // // //     Date: ${this.date}
+        // // //     Quantity:${this.quantity}
+        // // //     Package: ${this.package_id}`c
+        // // // }
 
         // e.preventDefault();
     })
@@ -114,5 +118,10 @@ $(function(){
             $("div.popular").append(response);
         })
         e.preventDefault();
+
+        // fetch('/packages/popular.json').then(response => response.json()).then(data => {
+        // const packageHTML = package.formatAdmiredHrml()
+        // })
+        
     })
 })
