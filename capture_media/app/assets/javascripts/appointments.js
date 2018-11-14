@@ -54,6 +54,9 @@ $(function(){
 //     });
 // });
 
+// JUST HAVE THE APPOINTMENTS LOAD ON THE INDEX/ HOME PAGE INSTEAD USING A LINK TO CLICK SO THAT IT LOADS PROPERLY
+
+
 $(function(){
     $("a#appointments").on("click", function(e){
         // $.ajax({
