@@ -92,7 +92,7 @@ $(function(){
         //     $("div#appointments").append(response)
         // })
 // THE FOLLOWING CODE IS MEANT TO DISPLAY JSON WITHOUT USING JQUERY, BUT USING FETCH INSTEAD
-        e.preventDefault()
+        // e.preventDefault()
         var url = '/users/1/appointments.json'
         fetch(url)
         .then(response => response.json())
