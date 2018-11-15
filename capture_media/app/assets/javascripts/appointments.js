@@ -56,6 +56,21 @@ $(function(){
 
 // JUST HAVE THE APPOINTMENTS LOAD ON THE INDEX/ HOME PAGE INSTEAD USING A LINK TO CLICK SO THAT IT LOADS PROPERLY
 
+// const link = document.getElementById('')
+// link.addEventListeners('click', function(event){
+    // fetchAppointments()
+// });
+// function fetchAppointments() {
+    // fetch('/users/1/appointments.json')
+        // .then(response => response.json())
+        // .then(data => {
+            // const appointment = new Appointment
+            // const appointmentHTML = appointment.formatDateHtml()
+            // document.getElementById('').innerHTML = appointmentHTML
+        // })
+// }
+
+
 
 $(function(){
     $("a#appointments").on("click", function(e){
@@ -85,7 +100,7 @@ $(function(){
             //     //debugger 
             //     document.getElementById('root_appointments').appendChild(textnode)
             })
-        })
+        // })
         // }
 
         // // // Class Appointment {
