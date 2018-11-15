@@ -55,21 +55,27 @@ $(function(){
 // });
 
 // JUST HAVE THE APPOINTMENTS LOAD ON THE INDEX/ HOME PAGE INSTEAD USING A LINK TO CLICK SO THAT IT LOADS PROPERLY
+// will this work in a document ready function?
 
-// const link = document.getElementById('')
-// link.addEventListeners('click', function(event){
-    // fetchAppointments()
-// });
-// function fetchAppointments() {
-    // fetch('/users/1/appointments.json')
-        // .then(response => response.json())
-        // .then(data => {
-            // const appointment = new Appointment
-            // const appointmentHTML = appointment.formatDateHtml()
-            // document.getElementById('').innerHTML = appointmentHTML
-        // })
-// }
-
+    // const link = document.getElementById('')
+    // link.addEventListeners('click', function(event){
+        // fetchAppointments()
+    // });
+    // function fetchAppointments() {
+        // fetch('/users/1/appointments.json')
+            // .then(response => response.json())
+            // .then(data => {
+                // const appointment = new Appointment
+                // const appointmentHTML = appointment.formatDateHtml()
+                // document.getElementById('').innerHTML = appointmentHTML
+            // })
+    // }
+    // Appointment.prototype.formatDateHtml = function(){
+        // return `Name: ${this.name}
+        // Date: ${this.date}
+        // Quantity: ${this.quantity}
+        // Package: ${this.package_id}`
+    // }
 
 
 $(function(){
