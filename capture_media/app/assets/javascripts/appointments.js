@@ -63,6 +63,17 @@ $(function(){
     // link.addEventListeners('click', function(event){
         // fetchAppointments()
     // });
+    //$( document ).ready(function() {
+        //function fetchAppointments() {
+            // fetch('/users/1/appointments.json')
+                // .then(response => response.json())
+                // .then(data => {
+                    // const appointment = new Appointment
+                    // const appointmentHTML = appointment.formatDateHtml()
+                    // document.getElementById('').innerHTML = appointmentHTML
+                // })
+        // }
+      //});
     // function fetchAppointments() {
         // fetch('/users/1/appointments.json')
             // .then(response => response.json())
