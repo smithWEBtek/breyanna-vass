@@ -57,6 +57,8 @@ $(function(){
 // JUST HAVE THE APPOINTMENTS LOAD ON THE INDEX/ HOME PAGE INSTEAD USING A LINK TO CLICK SO THAT IT LOADS PROPERLY
 // will this work in a document ready function?
 
+// how to implement load without clicking link/ how to get fetch?
+
     // const link = document.getElementById('current_appointments')
     // link.addEventListeners('click', function(event){
         // fetchAppointments()
