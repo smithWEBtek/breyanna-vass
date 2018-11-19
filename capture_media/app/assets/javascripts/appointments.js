@@ -44,15 +44,6 @@ $(function(){
      })
 })
 
-// $.get(this.href).success(function(json){
-//     var $pictures = $("div#appointments")
-//     $pictures.html
-
-//     Object.keys(json).forEach(function(appointment) {
-//         // debugger
-//         // console.log(key + '=' + obj[key]);
-//     });
-// });
 
 // JUST HAVE THE APPOINTMENTS LOAD ON THE INDEX/ HOME PAGE INSTEAD USING A LINK TO CLICK SO THAT IT LOADS PROPERLY
 // will this work in a document ready function?
