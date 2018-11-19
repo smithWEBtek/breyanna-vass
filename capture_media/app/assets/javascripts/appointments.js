@@ -131,25 +131,50 @@ $(function(){
 })
 
 
-
-$(function(){
-    $("a.load_package").on("click", function(e) { 
+$(document).ready(function(e){
+    e.preventDefault();
+    $("a.load_package").click(function(){
         $.ajax({
             method: "GET",
-            url: '/packages/popular.json',
-            dataType: 'json'
-        }).done(function(response){
-            console.log("a.load_package", response)
-            // how to append the JSON to the page
-            // Be sure to format the appointments using Alice's example for JSON formatting: https://codepen.io/Balbasuar/pen/LXNyrV?editors=1010
-            // return this.name + " " + this.description
-            $("div.popular").append(response);
-        })
-        e.preventDefault();
+            url: '/packages/popular.json'})
+        .done(data => packagePopular(data))
+      
+        fetch(url)
+            .then(resp => resp.json)
+            .then(data => addPackageToDom(data));
+    });
+  function packagePopular(data){
+    $("#name").html('Name: ' + data.name)
+    $("#description").html('Description: ' + data.description)
+  }
 
-        // fetch('/packages/popular.json').then(response => response.json()).then(data => {
-        // const packageHTML = package.formatAdmiredHrml()
-        // })
+  addPackageToDom = packagesArray => {
+      $('.packages').empty()
+      packagesArray.forEach(package => {
+          $('.packages').append(`${package.name}`)
+      })
+  }
+});
+
+
+// $(function(){
+//     $("a.load_package").on("click", function(e) { 
+//         $.ajax({
+//             method: "GET",
+//             url: '/packages/popular.json',
+//             dataType: 'json'
+//         }).done(function(response){
+//             console.log("a.load_package", response)
+//             // how to append the JSON to the page
+//             // Be sure to format the appointments using Alice's example for JSON formatting: https://codepen.io/Balbasuar/pen/LXNyrV?editors=1010
+//             // return this.name + " " + this.description
+//             $("div.popular").append(response);
+//         })
+//         e.preventDefault();
+
+//         // fetch('/packages/popular.json').then(response => response.json()).then(data => {
+//         // const packageHTML = package.formatAdmiredHrml()
+//         // })
         
-    })
-})
+//     })
+// })
