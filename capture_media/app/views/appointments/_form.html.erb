@@ -15,7 +15,7 @@
     <%= f.label :package_id, 'Package' %>
     <%= f.collection_select :package_id, Package.all, :id, :name %>
     For more information on the packages please see the packages page. 
-    <%= link_to "Popular Package", popular_packages_path, :class => "load_package" %>
+    <%= link_to "Popular Package", popular_packages_path, :class => "load_package", :id => "package" %>
     </div>
     <%= f.submit %>
 <% end %>    

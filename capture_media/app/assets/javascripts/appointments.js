@@ -136,11 +136,12 @@ $(document).ready(function(){
         e.preventDefault();
         $.ajax({
             method: "GET",
+            dataType: 'json',
             url: '/packages/popular.json'})
         .done(data => packagePopular(data))
       
-        fetch(url)
-            .then(resp => resp.json)
+        fetch('/packages/popular.json')
+            .then(resp => resp.json())
             .then(data => addPackageToDom(data));
     });
   function packagePopular(data){
@@ -149,9 +150,9 @@ $(document).ready(function(){
   }
 
   addPackageToDom = packagesArray => {
-      $('.packages').empty()
+      $('.popular').empty()
       packagesArray.forEach(package => {
-          $('.packages').append(`${package.name}`)
+        return `${package.name} + " " + ${package.description} + "."`
       })
   }
 });
