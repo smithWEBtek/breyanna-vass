@@ -131,9 +131,9 @@ $(function(){
 })
 
 
-$(document).ready(function(e){
-    e.preventDefault();
-    $("a.load_package").click(function(){
+$(document).ready(function(){
+    $("a.load_package").click(function(e){
+        e.preventDefault();
         $.ajax({
             method: "GET",
             url: '/packages/popular.json'})
