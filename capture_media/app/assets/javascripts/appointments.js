@@ -134,19 +134,19 @@ $(function(){
 $(document).ready(function(){
     $("a.load_package").click(function(e){
         e.preventDefault();
-        $.ajax({
-            method: "GET",
-            dataType: 'json',
-            url: '/packages/popular.json'})
-        .done(data => packagePopular(data))
-      
-        fetch('/packages/popular.json')
-            .then(resp => resp.json())
-            .then(data => {
+        const link = document.getElementsByClassName('load_package')
+        link.addEventListener('click', function(event){
+            fetchPopularPackage()
+        });
+        function fetchPopularPackage() {
+            fetch('/packages/popular.json')
+                .then(resp => resp.json())
+                .then(data => {
                 const package = new Packages(data.message)
                 const packageHTML = formatAdmiredHtml()
                 document.getElementsByClassName('admired').innerHTML = packageHTML
             });
+        }
     });
   
 });
