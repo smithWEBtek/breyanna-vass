@@ -142,20 +142,24 @@ $(document).ready(function(){
       
         fetch('/packages/popular.json')
             .then(resp => resp.json())
-            .then(data => addPackageToDom(data));
+            .then(data => {
+                const package = new Packages(data.message)
+                const packageHTML = formatAdmiredHtml()
+                document.getElementsByClassName('admired').innerHTML = packageHTML
+            });
     });
-  function packagePopular(data){
-    $("#name").html('Name: ' + data.name)
-    $("#description").html('Description: ' + data.description)
-  }
-
-  addPackageToDom = packagesArray => {
-      $('.popular').empty()
-      packagesArray.forEach(package => {
-        return `${package.name} + " " + ${package.description} + "."`
-      })
-  }
+  
 });
+
+class Package {
+    constructor(message) {
+        this.name = message
+    }
+}
+
+Package.prototype.formatAdmiredHtml = function(){
+    return `${this.name} + " " ${this.description} + " ."`
+}
 
 
 // $(function(){
