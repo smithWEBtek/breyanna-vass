@@ -13,9 +13,7 @@ function Package(attributes) {
 Appointment.prototype;
 
 Appointment.prototype.youScheduled = function() {
-    // console.log(`Hello, ${this.name}, your appointment is ${this.date}.`);
     return `Hello ${this.name}, your appointment is ${this.date}`;
-    // alert {`Hello ${this.name}, your appointment is ${this.date}`};
 };
 
 $(function(){
@@ -30,12 +28,10 @@ $(function(){
              dataType: "json",
              method: "POST"
          }).success(function(json){
-            //console.log(json)
             $("div.appointments").val(" ")
             var appointment = new Appointment(json);
             var appointmentLi = appointment.youScheduled()
-            document.getElementById("scheduled").innerHTML = appointmentLi //"Hello " + appointment.name + ", " + "your appointment is " + appointment.date + ".";
-            // $("div.appointments").append(appointmentLi)
+            document.getElementById("scheduled").innerHTML = appointmentLi
          })
          .error(function(response){
              console.log("You broke it?", response)
