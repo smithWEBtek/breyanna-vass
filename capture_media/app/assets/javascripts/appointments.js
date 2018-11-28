@@ -81,56 +81,6 @@ $(function(){
         // Package: ${this.package_id}`
     // }
 
-
-$(function(){
-    $("a#appointments").on("click", function(e){
-        // $.ajax({
-        //     method: 'GET',
-        //     url: '/users/1/appointments.json',
-        //     dataType: 'json'
-        //     // how to GET appointments using JSON
-        // }).done(function(response){
-        //     debugger
-        //     // console.log("div#appointments", response)
-        //     // Be sure to format the appointments using Alice's example for JSON formatting: https://codepen.io/Balbasuar/pen/LXNyrV?editors=1010
-        //     $("div#appointments").append(response)
-        // })
-// THE FOLLOWING CODE IS MEANT TO DISPLAY JSON WITHOUT USING JQUERY, BUT USING FETCH INSTEAD
-        // e.preventDefault()
-        var url = '/users/1/appointments.json'
-        fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            //debugger
-            // const appointment = new Appointment(data.message)
-            // const appointmentHTML = appointment.formatDateHtml()
-            // debugger
-            // data.forEach(user => {
-            //     var textnode = document.createTextNode(user.name);         // Create a text node  
-            //     //debugger 
-            //     document.getElementById('root_appointments').appendChild(textnode)
-            })
-        // })
-        // }
-
-        // // // Class Appointment {
-        // // //     Constructor(message){
-        // // //         This.name = message
-        // // //     }
-        // // // }
-
-        // // // Appointment.prototype.formatDateHtml = function(){
-        // // //     Return `Name: ${this.name}
-        // // //     Date: ${this.date}
-        // // //     Quantity:${this.quantity}
-        // // //     Package: ${this.package_id}`c
-        // // // }
-
-        // e.preventDefault();
-    })
-})
-
-
 $(document).ready(function(){
     $("a.load_package").click(function(e){
         e.preventDefault();
@@ -161,24 +111,3 @@ $(document).ready(function(){
   
 });
 
-// $(function(){
-//     $("a.load_package").on("click", function(e) { 
-//         $.ajax({
-//             method: "GET",
-//             url: '/packages/popular.json',
-//             dataType: 'json'
-//         }).done(function(response){
-//             console.log("a.load_package", response)
-//             // how to append the JSON to the page
-//             // Be sure to format the appointments using Alice's example for JSON formatting: https://codepen.io/Balbasuar/pen/LXNyrV?editors=1010
-//             // return this.name + " " + this.description
-//             $("div.popular").append(response);
-//         })
-//         e.preventDefault();
-
-//         // fetch('/packages/popular.json').then(response => response.json()).then(data => {
-//         // const packageHTML = package.formatAdmiredHrml()
-//         // })
-        
-//     })
-// })
