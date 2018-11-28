@@ -142,13 +142,13 @@ $(document).ready(function(){
             fetch('/packages/popular.json')
                 .then(resp => resp.json())
                 .then(data => {
-                    const package = new Packages(data)
-                    //debugger
+                    const package = new Package(data.name, data.description)
+                    debugger
                     const packageHTML = package.formatAdmiredHtml()
                     document.getElementsByClassName('admired').innerHTML = packageHTML
                 })
         }
-        class Packages {
+        class Package {
             constructor(name, description) {
                 this.name = name;
                 this.description = description;
