@@ -134,15 +134,16 @@ $(function(){
 $(document).ready(function(){
     $("a.load_package").click(function(e){
         e.preventDefault();
-        const link = document.getElementsByClassName('load_package')
-        link.addEventListener('click', function(event){
+        const x = document.getElementsByClassName("load_package");
+        x.addEventListener("click", function(event){
             fetchPopularPackage()
         });
         function fetchPopularPackage() {
             fetch('/packages/popular.json')
                 .then(resp => resp.json())
+                //console.log(resp.json())
                 .then(data => {
-                const package = new Packages(data.message)
+                const package = new Packages(data.description)
                 const packageHTML = formatAdmiredHtml()
                 document.getElementsByClassName('admired').innerHTML = packageHTML
             });
@@ -152,8 +153,8 @@ $(document).ready(function(){
 });
 
 class Package {
-    constructor(message) {
-        this.name = message
+    constructor(description) {
+        this.description = description
     }
 }
 
