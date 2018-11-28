@@ -134,7 +134,7 @@ $(function(){
 $(document).ready(function(){
     $("a.load_package").click(function(e){
         e.preventDefault();
-        const x = document.getElementsByClassName("load_package");
+        const x = document.getElementById("package");
         x.addEventListener("click", function(event){
             fetchPopularPackage()
         });
@@ -143,6 +143,7 @@ $(document).ready(function(){
                 .then(resp => resp.json())
                 //console.log(resp.json())
                 .then(data => {
+                // Do we need to use a different const or can we get rid of it all together?
                 const package = new Packages(data.description)
                 const packageHTML = formatAdmiredHtml()
                 document.getElementsByClassName('admired').innerHTML = packageHTML
@@ -152,9 +153,11 @@ $(document).ready(function(){
   
 });
 
+// should the constructor and the prototype be included in the document ready function
 class Package {
-    constructor(description) {
-        this.description = description
+    constructor(description, name) {
+        this.description = description;
+        this.name = name;
     }
 }
 
