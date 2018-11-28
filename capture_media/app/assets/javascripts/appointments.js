@@ -41,9 +41,68 @@ $(function(){
 })
 
 $(document ).ready(function(){
-    const link = document.getElementById('appointments')
-    link.addEventListeners('click', function(event){
-        debugger
-        fetchAppointments()
+    $("a#appointment").click(function(e){
+        e.preventDefault();
+        const link = document.getElementById('client')
+        // debugger
+        link.addEventListeners('click', function(event){
+            //debugger
+            fetchAppointments()
+        }) 
+        function fetchAppointments() {
+            fetch('/users/1/appointments.json')
+                .then(response => response.json())
+                .then(data => {
+                    const appointment = new Appointment(data.name, data.date, data.quantity, data.package_id)
+                    const appoinmentHTML = appointment.formatDateHtml()
+                    document.getElementById('').innerHTML = appoinmentHTML
+                })
+        }
+        class Appointment{
+            constructor(name, date, quantity, package_id){
+                this.name = name;
+                this.date = date;
+                this.quantity = quantity;
+                this.package_id = package_id
+            }
+        }
+        
+        Appointment.prototype.formatDateHtml = function() {
+            return `Name: ${this.name}
+            Date: ${this.date}
+            Quantity: ${this.quantity}
+            Package: ${this.package_id}`
+        }
     })
 });
+
+// $(document).ready(function(){
+    //     $("a.load_package").click(function(e){
+    //         e.preventDefault();
+    //         const x = document.getElementById("package");
+    //         x.addEventListener("click", function(event){
+    //             fetchPopularPackage()
+    //         });
+    //         function fetchPopularPackage() {
+    //             fetch('/packages/popular.json')
+    //                 .then(resp => resp.json())
+    //                 .then(data => {
+    //                     const package = new Package(data[0].name, data[0].description)
+    //                     const packageHTML = package.formatAdmiredHtml()
+    //                     debugger
+    //                     document.getElementById('admired').innerHTML = packageHTML
+    //                 })
+    //         }
+    //         class Package {
+    //             constructor(name, description) {
+    //                 this.name = name;
+    //                 this.description = description;
+    //             }
+    //         }
+    //         Package.prototype.formatAdmiredHtml = function(){
+    //             return `${this.name}  ${this.description}`
+    //         }
+    //     });
+      
+    // })
+    

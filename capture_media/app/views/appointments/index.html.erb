@@ -1,14 +1,8 @@
 <h1>Listing Appointments</h1>
-<div>
+<div id="client">
 
-<% @appointments.each do |appointment| %>
-    <label>Name:</label> <%= appointment.name %><br>
-    <label>Date:</label> <%= appointment.date %><br>
-    <label>Quantity:</label> <%= appointment.quantity %><br>
-    <label>Package:</label> <%= appointment.package_id %><br> 
-     
-<% end %>
 
+Display Appointment
 
 </div>
 <% if !!@user %>
