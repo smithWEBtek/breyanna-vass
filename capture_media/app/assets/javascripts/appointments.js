@@ -40,70 +40,10 @@ $(function(){
      })
 })
 
-
-// JUST HAVE THE APPOINTMENTS LOAD ON THE INDEX/ HOME PAGE INSTEAD USING A LINK TO CLICK SO THAT IT LOADS PROPERLY
-// will this work in a document ready function?
-
-// how to implement load without clicking link/ how to get fetch?
-
-    // const link = document.getElementById('current_appointments')
-    // link.addEventListeners('click', function(event){
-        // fetchAppointments()
-    // });
-    //$( document ).ready(function() {
-        //function fetchAppointments() {
-            // fetch('/users/1/appointments.json')
-                // .then(response => response.json())
-                // .then(data => {
-                    // const appointment = new Appointment
-                    // const appointmentHTML = appointment.formatDateHtml()
-                    // document.getElementById('').innerHTML = appointmentHTML
-                // })
-        // }
-      //});
-    // function fetchAppointments() {
-        // fetch('/users/1/appointments.json')
-            // .then(response => response.json())
-            // .then(data => {
-                // const appointment = new Appointment
-                // const appointmentHTML = appointment.formatDateHtml()
-                // document.getElementById('').innerHTML = appointmentHTML
-            // })
-    // }
-    // Appointment.prototype.formatDateHtml = function(){
-        // return `Name: ${this.name}
-        // Date: ${this.date}
-        // Quantity: ${this.quantity}
-        // Package: ${this.package_id}`
-    // }
-
-$(document).ready(function(){
-    $("a.load_package").click(function(e){
-        e.preventDefault();
-        const x = document.getElementById("package");
-        x.addEventListener("click", function(event){
-            fetchPopularPackage()
-        });
-        function fetchPopularPackage() {
-            fetch('/packages/popular.json')
-                .then(resp => resp.json())
-                .then(data => {
-                    const package = new Package(data.name, data.description)
-                    debugger
-                    const packageHTML = package.formatAdmiredHtml()
-                    document.getElementsByClassName('admired').innerHTML = packageHTML
-                })
-        }
-        class Package {
-            constructor(name, description) {
-                this.name = name;
-                this.description = description;
-            }
-        }
-        Package.prototype.formatAdmiredHtml = function(){
-            return `${this.name} + " " ${this.description} + " ."`
-        }
-    });
-  
+$(document ).ready(function(){
+    const link = document.getElementById('appointments')
+    link.addEventListeners('click', function(event){
+        debugger
+        fetchAppointments()
+    })
 });
-
