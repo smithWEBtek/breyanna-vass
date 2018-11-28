@@ -5,7 +5,7 @@ function Appointment(attributes) {
     this.package_id = attributes.package_id;
 }
 
-function Packages(attributes) {
+function Package(attributes) {
     this.name = attributes.name;
     this.description = attributes.description;
 }
@@ -141,30 +141,25 @@ $(document).ready(function(){
         function fetchPopularPackage() {
             fetch('/packages/popular.json')
                 .then(resp => resp.json())
-                //console.log(resp.json())
                 .then(data => {
-                // Do we need to use a different const or can we get rid of it all together?
-                const package = new Packages(data.description)
-                const packageHTML = formatAdmiredHtml()
-                document.getElementsByClassName('admired').innerHTML = packageHTML
-            });
+                    const package = new Packages(data)
+                    //debugger
+                    const packageHTML = package.formatAdmiredHtml()
+                    document.getElementsByClassName('admired').innerHTML = packageHTML
+                })
+        }
+        class Packages {
+            constructor(name, description) {
+                this.name = name;
+                this.description = description;
+            }
+        }
+        Package.prototype.formatAdmiredHtml = function(){
+            return `${this.name} + " " ${this.description} + " ."`
         }
     });
   
 });
-
-// should the constructor and the prototype be included in the document ready function
-class Package {
-    constructor(description, name) {
-        this.description = description;
-        this.name = name;
-    }
-}
-
-Package.prototype.formatAdmiredHtml = function(){
-    return `${this.name} + " " ${this.description} + " ."`
-}
-
 
 // $(function(){
 //     $("a.load_package").on("click", function(e) { 
