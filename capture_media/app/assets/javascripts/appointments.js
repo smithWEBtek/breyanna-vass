@@ -45,7 +45,7 @@ $(document ).ready(function(){
         e.preventDefault();
         const link = document.getElementById("client");
         debugger
-        link.addEventListener("click", function(event){
+        link.addEventListener("click", function(event) {
         // Nothing happens once the section is called and it will not hit the debugger below
             debugger
             fetchAppointments()
@@ -57,7 +57,7 @@ $(document ).ready(function(){
                 .then(data => {
                     const appointment = new Appointment(data.name, data.date, data.quantity, data.package_id)
                     const appoinmentHTML = appointment.formatDateHtml()
-                    document.getElementById('').innerHTML = appoinmentHTML
+                    document.getElementById(" ").innerHTML = appoinmentHTML
                 })
         }
         class Appointment{
