@@ -41,15 +41,17 @@ $(function(){
 })
 
 $(document ).ready(function(){
-    $("a#appointment").click(function(e){
+    $("a#appointments").click(function(e){
         e.preventDefault();
-        const link = document.getElementById('client')
-        // debugger
-        link.addEventListeners('click', function(event){
-            //debugger
+        const link = document.getElementById("client");
+        debugger
+        link.addEventListener("click", function(event){
+        // Nothing happens once the section is called and it will not hit the debugger below
+            debugger
             fetchAppointments()
-        }) 
+        }); 
         function fetchAppointments() {
+            debugger
             fetch('/users/1/appointments.json')
                 .then(response => response.json())
                 .then(data => {
