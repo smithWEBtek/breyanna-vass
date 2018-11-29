@@ -45,6 +45,7 @@ $(document ).ready(function(){
         e.preventDefault();
         const link = document.getElementById("client");
         debugger
+        // try to separate out the each of the following functions one by one to find the problem
         link.addEventListener("click", function(event) {
         // Nothing happens once the section is called and it will not hit the debugger below
             debugger
@@ -70,9 +71,10 @@ $(document ).ready(function(){
         }
         
         Appointment.prototype.formatDateHtml = function() {
-            return `Name: ${this.name}
-            Date: ${this.date}
-            Quantity: ${this.quantity}
+            // use a loop to get all of the information to every appointment
+            return `Name: ${this.name}, 
+            Date: ${this.date}, 
+            Quantity: ${this.quantity}, 
             Package: ${this.package_id}`
         }
     })
