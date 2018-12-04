@@ -46,36 +46,12 @@ $(document ).ready(function(){
         //debugger
         const y = document.getElementById("client");
         debugger
-        y.addEventListener("click", function(event){
-            //debugger
+        console.log("the const y is: ", y);
+        debugger
+        y.addEventListener("click", function() {
+            debugger
             fetchAppointments()
         })
-        function fetchAppointments() {
-            debugger
-            fetch('/users/1/appointments.json')
-                .then(response => response.json())
-                .then(data => {
-                    const appointment = new Appointment(data.name, data.date, data.quantity, data.package_id)
-                    const appoinmentHTML = appointment.formatDateHtml()
-                    document.getElementById(" ").innerHTML = appoinmentHTML
-                })
-        }
-        class Appointment{
-            constructor(name, date, quantity, package_id){
-                this.name = name;
-                this.date = date;
-                this.quantity = quantity;
-                this.package_id = package_id
-            }
-        }
-        
-        Appointment.prototype.formatDateHtml = function() {
-            // use a loop to get all of the information to every appointment
-            return `Name: ${this.name}, 
-            Date: ${this.date}, 
-            Quantity: ${this.quantity}, 
-            Package: ${this.package_id}`
-        }
     })
 });
 
