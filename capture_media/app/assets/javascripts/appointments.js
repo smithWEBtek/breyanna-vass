@@ -43,14 +43,13 @@ $(function(){
 $(document ).ready(function(){
     $("a#appointments").click(function(e){
         e.preventDefault();
-        const link = document.getElementById("client");
+        //debugger
+        const y = document.getElementById("client");
         debugger
-        // try to separate out the each of the following functions one by one to find the problem
-        link.addEventListener("click", function(event) {
-        // Nothing happens once the section is called and it will not hit the debugger below
-            debugger
+        y.addEventListener("click", function(event){
+            //debugger
             fetchAppointments()
-        }); 
+        })
         function fetchAppointments() {
             debugger
             fetch('/users/1/appointments.json')
