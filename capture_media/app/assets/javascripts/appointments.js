@@ -55,7 +55,7 @@ $(document ).ready(function(){
         data.forEach(appt => {
             let appointment = new Appointment(appt.name, appt.date, appt.quantity, appt.package_id)
             let appointmentHTML = appointment.formatDateHtml()
-            debugger
+            // debugger
             document.getElementById("client").innerHTML += appointmentHTML + "<br>";
         })
     }
@@ -69,9 +69,9 @@ $(document ).ready(function(){
     }
     Appointment.prototype.formatDateHtml = function() {
         // use a loop to get all of the information to every appointment
-        return `Name: ${this.name}, 
-        Date: ${this.date}, 
-        Quantity: ${this.quantity}, 
+        return `Name: ${this.name} <br> 
+        Date: ${this.date} <br> 
+        Quantity: ${this.quantity} <br> 
         Package: ${this.package_id}`
     }
 });
