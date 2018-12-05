@@ -51,7 +51,9 @@ $(document ).ready(function(){
             .then(response => response.json())
             .then(data => {
                 const appointment = new Appointment(data.name, data.date, data.quantity, data.package_id)
+                debugger
                 const appointmentHTML = appointment.formatDateHtml()
+                debugger
                 document.getElementById("client").innerHTML = appointmentHTML
             })
     }
