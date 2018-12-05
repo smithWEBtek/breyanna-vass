@@ -56,7 +56,15 @@ $(document ).ready(function(){
             let appointment = new Appointment(appt.name, appt.date, appt.quantity, appt.package_id)
             let appointmentHTML = appointment.formatDateHtml()
             // debugger
-            document.getElementById("client").innerHTML += appointmentHTML + "<br>";
+            //$("#client").html(appointmentHTML + '<br>')
+            var para = document.createElement("p");
+            var node = document.createTextNode(appointmentHTML)
+            para.appendChild(node);
+            var element = document.getElementById("client");
+            var child = document.getElementById("p2");
+            element.append(para, child);
+            console.log("appoinment.formatAdmiredHtml()")
+            // document.getElementById("client").innerHTML += appointmentHTML + "<br>";
         })
     }
     class Appointment{
@@ -69,9 +77,9 @@ $(document ).ready(function(){
     }
     Appointment.prototype.formatDateHtml = function() {
         // use a loop to get all of the information to every appointment
-        return `Name: ${this.name} <br> 
-        Date: ${this.date} <br> 
-        Quantity: ${this.quantity} <br> 
+        return `Name: ${this.name}   
+        Date: ${this.date} 
+        Quantity: ${this.quantity}   
         Package: ${this.package_id}`
     }
 });
