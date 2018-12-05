@@ -53,18 +53,13 @@ $(document ).ready(function(){
     }
     function createAppointments(data){
         data.forEach(appt => {
+            //debugger
             let appointment = new Appointment(appt.name, appt.date, appt.quantity, appt.package_id)
             let appointmentHTML = appointment.formatDateHtml()
-            // debugger
-            //$("#client").html(appointmentHTML + '<br>')
-            var para = document.createElement("p");
-            var node = document.createTextNode(appointmentHTML)
-            para.appendChild(node);
-            var element = document.getElementById("client");
-            var child = document.getElementById("p2");
-            element.append(para, child);
+            //debugger
+            $("div#client").append(appointmentHTML + "<br>")
             console.log("appoinment.formatAdmiredHtml()")
-            // document.getElementById("client").innerHTML += appointmentHTML + "<br>";
+            //document.getElementById("client").innerHTML += appointmentHTML + "<br>";
         })
     }
     class Appointment{
