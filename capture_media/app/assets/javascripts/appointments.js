@@ -49,13 +49,14 @@ $(document ).ready(function(){
     function fetchAppointments(){
         fetch('/users/1/appointments.json')
             .then(response => response.json())
-            .then(data => {
-                const appointment = new Appointment(data.name, data.date, data.quantity, data.package_id)
-                debugger
-                const appointmentHTML = appointment.formatDateHtml()
-                debugger
-                document.getElementById("client").innerHTML = appointmentHTML
-            })
+            .then(data => createAppointments(data))
+    }
+    function createAppointments(data){
+        data.forEach(appt => {
+            let appointment = new Appointment(appt.name, appt.date, appt.quantity, appt.package_id)
+            let appointmentHTML = appointment.formatDateHtml()
+            document.getElementById("client").innerHTML += appointmentHTML
+        })
     }
     class Appointment{
         constructor(name, date, quantity, package_id){
@@ -74,33 +75,33 @@ $(document ).ready(function(){
     }
 });
 
-// $(document).ready(function(){
-    //     $("a.load_package").click(function(e){
-    //         e.preventDefault();
-    //         const x = document.getElementById("package");
-    //         x.addEventListener("click", function(event){
-    //             fetchPopularPackage()
-    //         });
-    //         function fetchPopularPackage() {
-    //             fetch('/packages/popular.json')
-    //                 .then(resp => resp.json())
-    //                 .then(data => {
-    //                     const package = new Package(data[0].name, data[0].description)
-    //                     const packageHTML = package.formatAdmiredHtml()
-    //                     debugger
-    //                     document.getElementById('admired').innerHTML = packageHTML
-    //                 })
-    //         }
-    //         class Package {
-    //             constructor(name, description) {
-    //                 this.name = name;
-    //                 this.description = description;
-    //             }
-    //         }
-    //         Package.prototype.formatAdmiredHtml = function(){
-    //             return `${this.name}  ${this.description}`
-    //         }
-    //     });
+ $(document).ready(function(){
+    $("a.load_package").click(function(e){
+        e.preventDefault();
+        const x = document.getElementById("package");
+        x.addEventListener("click", function(event){
+            fetchPopularPackage()
+        });
+        function fetchPopularPackage() {
+            fetch('/packages/popular.json')
+                .then(resp => resp.json())
+                .then(data => {
+                    const package = new Package(data[0].name, data[0].description)
+                    const packageHTML = package.formatAdmiredHtml()
+                    debugger
+                    document.getElementById('admired').innerHTML = packageHTML
+                })
+        }
+        class Package {
+            constructor(name, description) {
+                this.name = name;
+                this.description = description;
+            }
+        }
+        Package.prototype.formatAdmiredHtml = function(){
+            return `${this.name}  ${this.description}`
+         }
+    });
       
-    // })
+})
     
