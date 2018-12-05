@@ -55,7 +55,8 @@ $(document ).ready(function(){
         data.forEach(appt => {
             let appointment = new Appointment(appt.name, appt.date, appt.quantity, appt.package_id)
             let appointmentHTML = appointment.formatDateHtml()
-            document.getElementById("client").innerHTML += appointmentHTML
+            //debugger
+            document.getElementById("client").innerHTML += appointmentHTML + "<br>"
         })
     }
     class Appointment{
