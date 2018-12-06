@@ -11,7 +11,6 @@ function Package(attributes) {
 
 
 $(function () {
-
     $("form#new_appointment").on("submit", function (e) {
         debugger
         var $form = $(this);
@@ -110,6 +109,6 @@ $(document).ready(function () {
             return `${this.name}  ${this.description}`
         }
     });
-
+    listenMyAppointments();
 })
 
