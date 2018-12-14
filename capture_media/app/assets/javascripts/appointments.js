@@ -12,7 +12,7 @@ function Package(attributes) {
 
 $(function () {
     $("form#new_appointment").on("submit", function (e) {
-        debugger
+        //debugger
         var $form = $(this);
         var action = $form.attr("action");
         var params = $form.serialize()
@@ -93,9 +93,9 @@ $(document).ready(function () {
             fetch('/packages/popular.json')
                 .then(resp => resp.json())
                 .then(data => {
-                    const package = new Package(data[0].name, data[0].description)
+                    const package = new Package(data.name, data.description)
                     const packageHTML = package.formatAdmiredHtml()
-                    debugger
+                    //debugger
                     document.getElementById('admired').innerHTML = packageHTML
                 })
         }

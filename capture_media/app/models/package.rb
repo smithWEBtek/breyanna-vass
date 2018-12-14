@@ -7,5 +7,6 @@ class Package < ApplicationRecord
     scope :popular, -> { Package.left_joins(:appointments).group(:id).order('COUNT(appointments.id) DESC').limit(1) }
 
     #return just the model not an array
+    
         
 end
