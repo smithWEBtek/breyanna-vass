@@ -1,8 +1,9 @@
 <h1>Description of Packages</h1>
 
 #Want the names to link to a list of appointments that were requested in the appointment creation process using JSON
-
-<% @packages.each do |package| %>
-    <h3><%= package.name %></h3>
-    <%= package.description %>
-<% end %>
+<div>
+    <% @packages.each do |package| %>
+        <h3><%= package.name %></h3>
+        <%= package.description %>
+    <% end %>
+</div>

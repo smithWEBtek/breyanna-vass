@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   #get 'sessions/create'
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'users/registrations' }
-  resources :packages do
+  resources :packages, only: [:index, :show] do
     collection do
       get :popular
     end
