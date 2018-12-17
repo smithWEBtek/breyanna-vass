@@ -2,5 +2,8 @@
 
 
 <div>
-    <%= link_to render partial: "packages" %>
+<% @packages.each do |package| %>
+    <h3><%= link_to package.name, package_path(package.id) %></h3>
+    <%= package.description %><br>
+<% end %>
 </div>
