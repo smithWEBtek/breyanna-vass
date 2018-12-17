@@ -3,7 +3,7 @@
 
 <div>
 <% @packages.each do |package| %>
-    <h3><%= link_to package.name, package_path(package.id), class: => "favored"  %></h3>
+    <h3><%= link_to package.name, package_path(package.id), :class => "favored"  %></h3>
     <%= package.description %><br>
 <% end %>
 </div>
