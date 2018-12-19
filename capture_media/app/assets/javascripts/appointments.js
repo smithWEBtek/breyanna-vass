@@ -133,3 +133,6 @@ function listingPickedDates() {
     })
 }
 
+Appointment.prototype.selectedDateAndName = function () {
+    return `${this.name} has selected this package for ${this.date}.`
+}
