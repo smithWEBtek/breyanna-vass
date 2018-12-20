@@ -114,18 +114,20 @@ $(document).ready(function () {
 })
 
 function listingPickedDates() {
+    // debugger
     $("a.favored").click(function (e) {
+        e.preventDefault();
         $.ajax({
-            url: this.url,
-            data: params,
+            url: this.href,
             dataType: "json",
-            method: "POST"
+            method: "GET"
         }).success(function (json) {
             // clear the HTML in the div
             debugger
-            $("div.choosen").html("") //empties the div
+            console.log(json["appointments"])
+            $("div#choosen").html("") //empties the div
             // iterate over each appointment within JSON
-            var meeting = new Appointment(json);
+            var meeting = new Appointment(json["appointments"]);
             var peopleChoice = meeting.selectedDateAndName()
             document.getElementById("choosen").innerHTML = peopleChoice
             // with each appointment data, append a name and date
@@ -134,7 +136,6 @@ function listingPickedDates() {
             .error(function (response) {
                 console.log("Something went wrong!!!", response)
             })
-        e.preventDefault();
     })
 }
 
