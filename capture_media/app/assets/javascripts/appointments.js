@@ -91,7 +91,9 @@ $(document).ready(function () {
             fetchPopularPackage()
         });
         function fetchPopularPackage() {
-            fetch('/packages/popular.json')
+            fetch('/packages/popular.json', {
+                headers: { 'Contnent-Type': 'application/json' }
+            })
                 .then(resp => resp.json())
                 .then(data => {
                     const package = new Package(data.name, data.description)
