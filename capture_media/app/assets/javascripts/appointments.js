@@ -115,20 +115,26 @@ $(document).ready(function () {
 
 function listingPickedDates() {
     $("a.favored").click(function (e) {
-        $.get(this.href).success(function (json) {
+        $.ajax({
+            url: this.url,
+            data: params,
+            dataType: "json",
+            method: "POST"
+        }).success(function (json) {
             // clear the HTML in the div
+            debugger
             var $choosen = $("div.choosen")
             $choosen.html("") //empties the div
             // iterate over each appointment within JSON
-            json.forEach((person) => {
-                // Appointment is already being used so I need a new name or a more concise way of getting the appointment data
-                let appointment = new Appointment(person.name, person.date)
-                let peopleChoice = appointment.selectedDateAndName()
-                $choosen.append(peopleChoice + "<br>")
-            });
+            var appoinment = new Appointment(json);
+            var peopleChoice = appoinment.selectedDateAndName()
+            document.getElementById("choosen").innerHTML = peopleChoice
             // with each appointment data, append a name and date
             debugger
         })
+            .error(function (response) {
+                console.log("Something went wrong!!!", response)
+            })
         e.preventDefault();
     })
 }
