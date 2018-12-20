@@ -123,11 +123,10 @@ function listingPickedDates() {
         }).success(function (json) {
             // clear the HTML in the div
             debugger
-            var $choosen = $("div.choosen")
-            $choosen.html("") //empties the div
+            $("div.choosen").html("") //empties the div
             // iterate over each appointment within JSON
-            var appoinment = new Appointment(json);
-            var peopleChoice = appoinment.selectedDateAndName()
+            var meeting = new Appointment(json);
+            var peopleChoice = meeting.selectedDateAndName()
             document.getElementById("choosen").innerHTML = peopleChoice
             // with each appointment data, append a name and date
             debugger
