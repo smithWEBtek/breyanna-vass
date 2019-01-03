@@ -129,14 +129,13 @@ function listingPickedDates() {
             console.log(json["appointments"])
             $("div#choosen").html("") //empties the div
             // iterate over each appointment within JSON
-            debugger
             let knowledge = json["appointments"]
             // this works but I cannot see the list of appointments that have selected a package all at once.
             knowledge.forEach((occasion) => {
-                debugger
                 var meeting = new Appointment(occasion);
                 var peopleChoice = meeting.selectedDateAndName()
-                document.getElementById("choosen").innerHTML = peopleChoice
+                $("div#choosen").append(peopleChoice + "<br>")
+                // document.getElementById("choosen").innerHTML = peopleChoice
             })
             // with each appointment data, append a name and date
         })
